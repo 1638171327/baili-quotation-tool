@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BAILI 报价单</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="company-box">
+          <div class="logo">BAILI</div>
+          <div>
+            <h1>Baili Electrical Appliance</h1>
+            <p>Quotation Sheet / 报价单</p>
+          </div>
+        </div>
+
+        <div class="quote-info">
+          <p>单号：<input id="quoteNo" type="text" value="Q-2026-001" /></p>
+          <p>日期：<input id="quoteDate" type="date" /></p>
+        </div>
+      </header>
+
+      <section class="customer-area">
+        <div class="customer-block">
+          <label>
+            客户名称
+            <input id="customerName" type="text" value="Baili 客户" />
+          </label>
+        </div>
+
+        <div class="customer-block">
+          <label>
+            联系人
+            <input id="contactName" type="text" value="张经理" />
+          </label>
+        </div>
+
+        <div class="customer-block">
+          <label>
+            联系电话
+            <input id="phone" type="text" value="13800000000" />
+          </label>
+        </div>
+      </section>
+
+      <section class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>产品名称</th>
+              <th>规格</th>
+              <th>数量</th>
+              <th>单价</th>
+              <th>小计</th>
+              <th>操作</th>
+            </tr>
+          </thead>
+          <tbody id="itemRows"></tbody>
+        </table>
+
+        <div class="row-actions">
+          <button type="button" class="secondary-btn" id="addRowBtn">+ 新增产品</button>
+        </div>
+      </section>
+
+      <section class="summary-area">
+        <div class="summary-left">
+          <label>
+            备注说明
+            <textarea id="notes" rows="4">产品按最终验收标准执行，报价含税，款项以实际发票为准。</textarea>
+          </label>
+        </div>
+
+        <div class="summary-right">
+          <div class="summary-row">
+            <span>商品小计</span>
+            <strong id="subtotalValue">¥0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>折扣（%）</span>
+            <input id="discountRate" type="number" min="0" max="100" value="5" />
+          </div>
+          <div class="summary-row">
+            <span>折扣金额</span>
+            <strong id="discountValue">-¥0.00</strong>
+          </div>
+          <div class="summary-row">
+            <span>税率（%）</span>
+            <input id="taxRate" type="number" min="0" max="100" value="6" />
+          </div>
+          <div class="summary-row">
+            <span>税额</span>
+            <strong id="taxValue">¥0.00</strong>
+          </div>
+          <div class="summary-row total-row">
+            <span>总金额</span>
+            <strong id="totalValue">¥0.00</strong>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer-actions">
+        <button type="button" id="printBtn">打印报价单</button>
+        <button type="button" class="secondary-btn" id="exportBtn">导出 TXT</button>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
